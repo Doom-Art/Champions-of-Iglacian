@@ -1,0 +1,406 @@
+[gd_scene load_steps=32 format=3 uid="uid://db8oe0j1bp7wg"]
+
+[ext_resource type="Texture2D" uid="uid://2jrtljmv4e6m" path="res://Art/GameUi/02character/home_buttons.png" id="1_7ebov"]
+[ext_resource type="Script" path="res://MainScenes/Other/character_selection.cs" id="1_tyvqj"]
+[ext_resource type="Texture2D" uid="uid://c2ok11aejqnkc" path="res://Art/GameUi/02character/char_bg.png" id="2_k5c2n"]
+[ext_resource type="Texture2D" uid="uid://cbr47wjvknv0t" path="res://Art/GameUi/02character/shadow.png" id="3_qvtdl"]
+[ext_resource type="Texture2D" uid="uid://bu281qo7ur8bd" path="res://Art/GameUi/02character/char_sell.png" id="4_4xh3u"]
+[ext_resource type="Texture2D" uid="uid://dq8uoreoml8in" path="res://Art/Icons/con9.png" id="5_vj8td"]
+[ext_resource type="Texture2D" uid="uid://btbj3ralkp1pi" path="res://Art/PixelArtCharacters/Ninja/rogue.png" id="6_4phso"]
+[ext_resource type="Script" path="res://Components/ModifiedButton.cs" id="6_mqdty"]
+[ext_resource type="Texture2D" uid="uid://28yarmp0l5f0" path="res://Art/Icons/con1.png" id="7_phq6j"]
+[ext_resource type="FontFile" uid="uid://17l0u1bvu0je" path="res://Fonts/SmackyFormula.ttf" id="9_abylj"]
+[ext_resource type="Texture2D" uid="uid://cbeo1kiql2gms" path="res://Art/PixelArtCharacters/SilverKnight/knight.png" id="9_eetmd"]
+[ext_resource type="Texture2D" uid="uid://c3kp3pdivqaul" path="res://Art/Icons/con5.png" id="10_08chq"]
+[ext_resource type="Texture2D" uid="uid://bn3nc3qju2t0x" path="res://Art/PixelArtCharacters/RedMage/mage.png" id="11_pd4ut"]
+[ext_resource type="Texture2D" uid="uid://dkolwj1tcmycp" path="res://Art/GameUi/17Icons/brown_stroke/heart_stroke.png" id="11_ukg71"]
+[ext_resource type="Texture2D" uid="uid://c3ypm4c8s0kr1" path="res://Art/Icons/con2.png" id="12_s28pc"]
+[ext_resource type="Texture2D" uid="uid://twiesmnmn888" path="res://Art/Icons/con6.png" id="13_3od4r"]
+[ext_resource type="Texture2D" uid="uid://dcb6ugjb2c3li" path="res://Art/PixelArtCharacters/PurpleMage/mage.png" id="13_nhkcw"]
+[ext_resource type="Texture2D" uid="uid://dqawhsotl4op7" path="res://Art/GameUi/17Icons/brown_stroke/speed_stroke.png" id="13_wj8pe"]
+[ext_resource type="Texture2D" uid="uid://5ao1o5r1r5aa" path="res://Art/Icons/con7.png" id="14_2riea"]
+[ext_resource type="Texture2D" uid="uid://brogsga3ercjh" path="res://Art/GameUi/17Icons/brown_stroke/power_stroke.png" id="15_d5p7b"]
+[ext_resource type="Texture2D" uid="uid://0svdrwcoiupo" path="res://Art/PixelArtCharacters/GreenRogue/rogue.png" id="15_s4xo8"]
+[ext_resource type="Texture2D" uid="uid://4jy2wid55adl" path="res://Art/Icons/con4.png" id="15_urd0m"]
+[ext_resource type="Texture2D" uid="uid://bvm0n60h2dhqf" path="res://Art/Icons/con8.png" id="16_nrq66"]
+[ext_resource type="Texture2D" uid="uid://h8mhdytacp83" path="res://Art/PixelArtCharacters/BlueKnight/knight.png" id="17_6pv7r"]
+[ext_resource type="Texture2D" uid="uid://bugywtdmp2tu2" path="res://Art/Icons/con3.png" id="17_o03vv"]
+[ext_resource type="Texture2D" uid="uid://d4ipv7wslfj15" path="res://Art/PixelArtCharacters/Viking/knight.png" id="19_jct73"]
+[ext_resource type="Texture2D" uid="uid://caikodun15x6h" path="res://Art/PixelArtCharacters/GreenMage/mage.png" id="21_irjej"]
+[ext_resource type="Texture2D" uid="uid://rr81luwt2run" path="res://Art/PixelArtCharacters/GrayRogue/rogue.png" id="23_pkl8j"]
+[ext_resource type="Texture2D" uid="uid://c305mbxarqbbn" path="res://Art/GameUi/16Inner_Interface/loading_red_full_bar.png" id="24_hakyn"]
+[ext_resource type="Texture2D" uid="uid://bpct4hlkm4jxe" path="res://Art/GameUi/16Inner_Interface/loading_green_full_bar.png" id="26_3l26t"]
+[ext_resource type="Texture2D" uid="uid://5fum7kcv8lhd" path="res://Art/GameUi/16Inner_Interface/loading_blue_full_bar.png" id="28_47w7u"]
+
+[node name="CharacterSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_tyvqj")
+NextPath = "res://MainScenes/Other/menu.tscn"
+
+[node name="Play" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 76.0
+offset_bottom = 86.0
+texture_normal = ExtResource("1_7ebov")
+
+[node name="CharBg" type="Sprite2D" parent="."]
+position = Vector2(639.333, 208.667)
+texture = ExtResource("2_k5c2n")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(630, 172.667)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_qvtdl")
+
+[node name="CharButtons" type="Node" parent="."]
+
+[node name="Ninja" type="TextureButton" parent="CharButtons"]
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 239.0
+offset_bottom = 140.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_4xh3u")
+script = ExtResource("6_mqdty")
+
+[node name="Icon" type="Sprite2D" parent="CharButtons/Ninja"]
+position = Vector2(45, 45)
+texture = ExtResource("5_vj8td")
+
+[node name="Preview" type="Sprite2D" parent="CharButtons/Ninja"]
+visible = false
+position = Vector2(574, 60)
+scale = Vector2(2, 2)
+texture = ExtResource("6_4phso")
+region_rect = Rect2(0, 0, 128, 128)
+
+[node name="Label" type="Label" parent="CharButtons/Ninja"]
+layout_mode = 0
+offset_left = 0.666666
+offset_top = 93.3333
+offset_right = 94.6667
+offset_bottom = 116.333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_abylj")
+text = "Dante/Ninja"
+
+[node name="Silver" type="TextureButton" parent="CharButtons"]
+offset_left = 370.0
+offset_top = 50.0
+offset_right = 459.0
+offset_bottom = 140.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_4xh3u")
+script = ExtResource("6_mqdty")
+_num = 1
+
+[node name="Icon" type="Sprite2D" parent="CharButtons/Silver"]
+position = Vector2(45, 45)
+texture = ExtResource("7_phq6j")
+
+[node name="Preview" type="Sprite2D" parent="CharButtons/Silver"]
+visible = false
+position = Vector2(425, 50)
+scale = Vector2(2, 2)
+texture = ExtResource("9_eetmd")
+
+[node name="Label" type="Label" parent="CharButtons/Silver"]
+layout_mode = 0
+offset_left = 24.6667
+offset_top = 92.6667
+offset_right = 67.6667
+offset_bottom = 115.667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_abylj")
+text = "Silver"
+
+[node name="Red" type="TextureButton" parent="CharButtons"]
+offset_left = 600.0
+offset_top = 50.0
+offset_right = 689.0
+offset_bottom = 140.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_4xh3u")
+script = ExtResource("6_mqdty")
+_num = 2
+
+[node name="Icon" type="Sprite2D" parent="CharButtons/Red"]
+position = Vector2(45, 45)
+texture = ExtResource("10_08chq")
+
+[node name="Preview" type="Sprite2D" parent="CharButtons/Red"]
+visible = false
+position = Vector2(270, 50)
+scale = Vector2(2, 2)
+texture = ExtResource("11_pd4ut")
+
+[node name="Label" type="Label" parent="CharButtons/Red"]
+layout_mode = 0
+offset_left = 24.6667
+offset_top = 92.6667
+offset_right = 67.6667
+offset_bottom = 115.667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_abylj")
+text = "Ruby"
+
+[node name="Violet" type="TextureButton" parent="CharButtons"]
+offset_left = 150.0
+offset_top = 230.0
+offset_right = 239.0
+offset_bottom = 320.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_4xh3u")
+script = ExtResource("6_mqdty")
+_num = 3
+
+[node name="Icon" type="Sprite2D" parent="CharButtons/Violet"]
+position = Vector2(45, 45)
+texture = ExtResource("12_s28pc")
+
+[node name="Preview" type="Sprite2D" parent="CharButtons/Violet"]
+visible = false
+position = Vector2(570, -70)
+scale = Vector2(2, 2)
+texture = ExtResource("13_nhkcw")
+
+[node name="Label" type="Label" parent="CharButtons/Violet"]
+layout_mode = 0
+offset_left = 24.6667
+offset_top = 92.6667
+offset_right = 67.6667
+offset_bottom = 115.667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_abylj")
+text = "Violet"
+
+[node name="Forest" type="TextureButton" parent="CharButtons"]
+offset_left = 370.0
+offset_top = 230.0
+offset_right = 459.0
+offset_bottom = 320.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_4xh3u")
+script = ExtResource("6_mqdty")
+_num = 4
+
+[node name="Icon" type="Sprite2D" parent="CharButtons/Forest"]
+position = Vector2(45, 45)
+texture = ExtResource("13_3od4r")
+
+[node name="Preview" type="Sprite2D" parent="CharButtons/Forest"]
+visible = false
+position = Vector2(425, -75)
+scale = Vector2(2, 2)
+texture = ExtResource("15_s4xo8")
+
+[node name="Label" type="Label" parent="CharButtons/Forest"]
+layout_mode = 0
+offset_left = 24.6667
+offset_top = 92.6667
+offset_right = 67.6667
+offset_bottom = 115.667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_abylj")
+text = "Forest"
+
+[node name="Bronze" type="TextureButton" parent="CharButtons"]
+offset_left = 600.0
+offset_top = 230.0
+offset_right = 689.0
+offset_bottom = 320.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_4xh3u")
+script = ExtResource("6_mqdty")
+_num = 5
+
+[node name="Icon" type="Sprite2D" parent="CharButtons/Bronze"]
+position = Vector2(45, 45)
+texture = ExtResource("14_2riea")
+
+[node name="Preview" type="Sprite2D" parent="CharButtons/Bronze"]
+visible = false
+position = Vector2(270, -60)
+scale = Vector2(2, 2)
+texture = ExtResource("17_6pv7r")
+
+[node name="Label" type="Label" parent="CharButtons/Bronze"]
+layout_mode = 0
+offset_left = 24.6667
+offset_top = 92.6667
+offset_right = 67.6667
+offset_bottom = 115.667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_abylj")
+text = "Bronze"
+
+[node name="Viking" type="TextureButton" parent="CharButtons"]
+offset_left = 150.0
+offset_top = 410.0
+offset_right = 239.0
+offset_bottom = 500.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_4xh3u")
+script = ExtResource("6_mqdty")
+_num = 6
+
+[node name="Icon" type="Sprite2D" parent="CharButtons/Viking"]
+position = Vector2(45, 45)
+texture = ExtResource("15_urd0m")
+
+[node name="Preview" type="Sprite2D" parent="CharButtons/Viking"]
+visible = false
+position = Vector2(572, -194)
+scale = Vector2(2, 2)
+texture = ExtResource("19_jct73")
+
+[node name="Label" type="Label" parent="CharButtons/Viking"]
+layout_mode = 0
+offset_left = 24.6667
+offset_top = 92.6667
+offset_right = 67.6667
+offset_bottom = 115.667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_abylj")
+text = "Viking"
+
+[node name="Amber" type="TextureButton" parent="CharButtons"]
+offset_left = 370.0
+offset_top = 410.0
+offset_right = 459.0
+offset_bottom = 500.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_4xh3u")
+script = ExtResource("6_mqdty")
+_num = 7
+
+[node name="Icon" type="Sprite2D" parent="CharButtons/Amber"]
+position = Vector2(45, 45)
+texture = ExtResource("16_nrq66")
+
+[node name="Preview" type="Sprite2D" parent="CharButtons/Amber"]
+visible = false
+position = Vector2(425, -180)
+scale = Vector2(2, 2)
+texture = ExtResource("21_irjej")
+
+[node name="Label" type="Label" parent="CharButtons/Amber"]
+layout_mode = 0
+offset_left = 24.6667
+offset_top = 92.6667
+offset_right = 67.6667
+offset_bottom = 115.667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_abylj")
+text = "Amber"
+
+[node name="Shadow" type="TextureButton" parent="CharButtons"]
+offset_left = 600.0
+offset_top = 410.0
+offset_right = 689.0
+offset_bottom = 500.0
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_4xh3u")
+script = ExtResource("6_mqdty")
+_num = 8
+
+[node name="Icon" type="Sprite2D" parent="CharButtons/Shadow"]
+position = Vector2(45, 45)
+texture = ExtResource("17_o03vv")
+
+[node name="Preview" type="Sprite2D" parent="CharButtons/Shadow"]
+visible = false
+position = Vector2(270, -190)
+scale = Vector2(2, 2)
+texture = ExtResource("23_pkl8j")
+
+[node name="Label" type="Label" parent="CharButtons/Shadow"]
+layout_mode = 0
+offset_left = 24.6667
+offset_top = 92.6667
+offset_right = 67.6667
+offset_bottom = 115.667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_abylj")
+text = "Shadow"
+
+[node name="Health" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 210.0
+offset_right = 711.0
+offset_bottom = 222.0
+scale = Vector2(0.4, 1)
+min_value = 20.0
+max_value = 110.0
+value = 110.0
+texture_progress = ExtResource("24_hakyn")
+
+[node name="HeartStroke" type="Sprite2D" parent="Health"]
+position = Vector2(-75, 10)
+scale = Vector2(2.5, 1)
+texture = ExtResource("11_ukg71")
+
+[node name="Speed" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 260.0
+offset_right = 687.0
+offset_bottom = 270.0
+scale = Vector2(0.4, 1)
+min_value = 280.0
+max_value = 330.0
+value = 320.0
+texture_progress = ExtResource("26_3l26t")
+
+[node name="SpeedStroke" type="Sprite2D" parent="Speed"]
+position = Vector2(-75, 10)
+scale = Vector2(2.5, 1)
+texture = ExtResource("13_wj8pe")
+
+[node name="Attack" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 310.0
+offset_right = 687.0
+offset_bottom = 320.0
+scale = Vector2(0.4, 1)
+min_value = 2.0
+max_value = 12.0
+value = 12.0
+texture_progress = ExtResource("28_47w7u")
+
+[node name="PowerStroke" type="Sprite2D" parent="Attack"]
+position = Vector2(-75, 10)
+scale = Vector2(2.5, 1)
+texture = ExtResource("15_d5p7b")
+
+[connection signal="pressed" from="Play" to="." method="NextScreen"]
+[connection signal="ModifiedPressed" from="CharButtons/Ninja" to="." method="CharSelect"]
+[connection signal="ModifiedPressed" from="CharButtons/Silver" to="." method="CharSelect"]
+[connection signal="ModifiedPressed" from="CharButtons/Red" to="." method="CharSelect"]
+[connection signal="ModifiedPressed" from="CharButtons/Violet" to="." method="CharSelect"]
+[connection signal="ModifiedPressed" from="CharButtons/Forest" to="." method="CharSelect"]
+[connection signal="ModifiedPressed" from="CharButtons/Bronze" to="." method="CharSelect"]
+[connection signal="ModifiedPressed" from="CharButtons/Viking" to="." method="CharSelect"]
+[connection signal="ModifiedPressed" from="CharButtons/Amber" to="." method="CharSelect"]
+[connection signal="ModifiedPressed" from="CharButtons/Shadow" to="." method="CharSelect"]

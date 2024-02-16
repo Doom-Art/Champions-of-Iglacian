@@ -1,0 +1,111 @@
+[gd_scene load_steps=12 format=3 uid="uid://bfnyr0uv3smwy"]
+
+[ext_resource type="Script" path="res://MainScenes/Other/Menu.cs" id="1_taxcf"]
+[ext_resource type="Texture2D" uid="uid://3c238cqg6b4o" path="res://Art/GameUi/01main/bg.png" id="2_5hl0t"]
+[ext_resource type="Texture2D" uid="uid://5i3nq0g50hlv" path="res://Art/GameUi/01main/platform.png" id="3_pbxcg"]
+[ext_resource type="Texture2D" uid="uid://3a4mo5xseu04" path="res://Art/GameUi/01main/characters.png" id="4_u8t0q"]
+[ext_resource type="Texture2D" uid="uid://cjyfpn248su8" path="res://Art/GameUi/01main/settings_button.png" id="5_0j4jm"]
+[ext_resource type="Texture2D" uid="uid://ca5rrcr7gjwvh" path="res://Art/GameUi/03potions/forward_button.png" id="6_0j22p"]
+[ext_resource type="Texture2D" uid="uid://d0tri8hyyohqx" path="res://Art/GameUi/17Icons/yellow/face_yellow.png" id="7_x581c"]
+[ext_resource type="Texture2D" uid="uid://mvg2svx20iy3" path="res://Art/GameUi/17Icons/yellow/__yellow.png" id="8_xeejs"]
+[ext_resource type="Texture2D" uid="uid://dsbidx2uy262h" path="res://Art/GameUi/17Icons/yellow/money_yellow.png" id="9_ck3pe"]
+[ext_resource type="FontFile" uid="uid://17l0u1bvu0je" path="res://Fonts/SmackyFormula.ttf" id="10_qfu35"]
+[ext_resource type="FontFile" uid="uid://csdiohvt7w42n" path="res://Fonts/SmackyFormulaOut.ttf" id="11_ho0k5"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_taxcf")
+LevelSelect = "res://MainScenes/Other/level_selection.tscn"
+CharacterSelect = "res://MainScenes/Other/character_selection.tscn"
+Settings = "res://MainScenes/Other/settings.tscn"
+InfoPage = "res://MainScenes/Other/info.tscn"
+Shop = "res://MainScenes/Other/shop.tscn"
+
+[node name="Bg" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_5hl0t")
+centered = false
+
+[node name="Platform" type="Sprite2D" parent="."]
+position = Vector2(560, 412)
+texture = ExtResource("3_pbxcg")
+
+[node name="Characters" type="Sprite2D" parent="."]
+position = Vector2(560, 290)
+texture = ExtResource("4_u8t0q")
+
+[node name="Play" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 483.0
+offset_right = 582.0
+offset_bottom = 549.0
+texture_normal = ExtResource("6_0j22p")
+
+[node name="Settings" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1070.0
+offset_top = 5.0
+offset_right = 1136.0
+offset_bottom = 71.0
+texture_normal = ExtResource("5_0j4jm")
+
+[node name="Character" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 995.0
+offset_top = 5.0
+offset_right = 1024.0
+offset_bottom = 35.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("7_x581c")
+stretch_mode = 3
+
+[node name="Info" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 5.0
+offset_right = 952.0
+offset_bottom = 38.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("8_xeejs")
+
+[node name="Shop" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 5.0
+offset_right = 877.0
+offset_bottom = 38.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("9_ck3pe")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 98.0
+offset_right = 863.0
+offset_bottom = 167.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_qfu35")
+theme_override_font_sizes/font_size = 50
+text = "Champions of Iglacian"
+
+[node name="Outline" type="Label" parent="Title"]
+layout_mode = 0
+offset_right = 534.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_ho0k5")
+theme_override_font_sizes/font_size = 50
+text = "Champions of Iglacian"
+
+[connection signal="pressed" from="Play" to="." method="OnPlayPressed"]
+[connection signal="pressed" from="Settings" to="." method="OnSettingsPressed"]
+[connection signal="pressed" from="Character" to="." method="OnCharacterPressed"]
+[connection signal="pressed" from="Info" to="." method="OnInfoPressed"]
+[connection signal="pressed" from="Shop" to="." method="OnShopPressed"]

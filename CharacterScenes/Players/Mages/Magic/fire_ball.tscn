@@ -1,0 +1,83 @@
+[gd_scene load_steps=14 format=3 uid="uid://62su8h6xcgrj"]
+
+[ext_resource type="Texture2D" uid="uid://ckqlyng1ysvld" path="res://Art/PixelArtCharacters/RedMage/Fire/fire4.png" id="1_bgcch"]
+[ext_resource type="Script" path="res://CharacterScenes/Players/Mages/Magic/Magic.cs" id="1_i13co"]
+[ext_resource type="Texture2D" uid="uid://bk58i6dwc51br" path="res://Art/PixelArtCharacters/RedMage/Fire/fire5.png" id="2_qe00u"]
+[ext_resource type="Texture2D" uid="uid://pyo7gumrxp8i" path="res://Art/PixelArtCharacters/RedMage/Fire/fire6.png" id="3_cwl2p"]
+[ext_resource type="Texture2D" uid="uid://dljum0kue7t2c" path="res://Art/PixelArtCharacters/RedMage/Fire/fire7.png" id="4_ersyt"]
+[ext_resource type="Texture2D" uid="uid://dctsr2wy7a7c1" path="res://Art/PixelArtCharacters/RedMage/Fire/fire8.png" id="5_11lnc"]
+[ext_resource type="Texture2D" uid="uid://b0jeq8fa7xxen" path="res://Art/PixelArtCharacters/RedMage/Fire/fire9.png" id="6_ax5wy"]
+[ext_resource type="Texture2D" uid="uid://dmkyxxtigeue3" path="res://Art/PixelArtCharacters/RedMage/Fire/fire1.png" id="7_r8yae"]
+[ext_resource type="Texture2D" uid="uid://c4rgi8dny5h61" path="res://Art/PixelArtCharacters/RedMage/Fire/fire2.png" id="8_qi083"]
+[ext_resource type="Texture2D" uid="uid://bjsrpm8vjtanl" path="res://Art/PixelArtCharacters/RedMage/Fire/fire3.png" id="9_of2gg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kyihg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bgcch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qe00u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cwl2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ersyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_11lnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ax5wy")
+}],
+"loop": false,
+"name": &"Disappear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_r8yae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qi083")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_of2gg")
+}],
+"loop": true,
+"name": &"Main",
+"speed": 6.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jg6mc"]
+a = Vector2(-11, 0)
+b = Vector2(14, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7n2m"]
+size = Vector2(25, 9)
+
+[node name="FireBall" type="RigidBody2D"]
+collision_mask = 14
+gravity_scale = 0.0
+script = ExtResource("1_i13co")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -9)
+sprite_frames = SubResource("SpriteFrames_kyihg")
+animation = &"Main"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_jg6mc")
+
+[node name="Attack" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+position = Vector2(1.5, -0.5)
+shape = SubResource("RectangleShape2D_y7n2m")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="AnimationFinished"]
+[connection signal="area_entered" from="Attack" to="." method="EnemyEntered"]

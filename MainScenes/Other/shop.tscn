@@ -1,0 +1,326 @@
+[gd_scene load_steps=17 format=3 uid="uid://bf7e8qh56mrb3"]
+
+[ext_resource type="Script" path="res://MainScenes/Other/Shop.cs" id="1_d7ka4"]
+[ext_resource type="Texture2D" uid="uid://dkyqj40ujedq0" path="res://Art/GameUi/03potions/cell_potions_small.png" id="1_r5xyx"]
+[ext_resource type="Script" path="res://Components/ModifiedButton.cs" id="3_i83y1"]
+[ext_resource type="Texture2D" uid="uid://k1efhgnqpbvn" path="res://Art/Weapons/ObsidianShield.png" id="3_kxnfg"]
+[ext_resource type="Texture2D" uid="uid://d4g6mkauouehx" path="res://Art/Weapons/VolcanicDagger.jpg" id="3_s5fjw"]
+[ext_resource type="Texture2D" uid="uid://7s3ky7euu2ih" path="res://Art/Weapons/LeafWand.jpg" id="4_wc3q5"]
+[ext_resource type="Texture2D" uid="uid://c36qlaoyvfmg1" path="res://Art/Weapons/PurpleThrowingKnives.jpg" id="5_0mxi3"]
+[ext_resource type="Texture2D" uid="uid://bp1q1bfbelud3" path="res://Art/Weapons/35.png" id="6_q1hiv"]
+[ext_resource type="Texture2D" uid="uid://b8sty7ro6ahyq" path="res://Art/Weapons/28.png" id="7_4w122"]
+[ext_resource type="FontFile" uid="uid://17l0u1bvu0je" path="res://Fonts/SmackyFormula.ttf" id="9_fi0b8"]
+[ext_resource type="Texture2D" uid="uid://cgqn2rrndgioi" path="res://Art/GameUi/12Shop/menu_bg.png" id="11_j18h4"]
+[ext_resource type="Texture2D" uid="uid://cbtutc8get44d" path="res://Art/GameUi/12Shop/beige_bg.png" id="12_q3251"]
+[ext_resource type="Texture2D" uid="uid://cbuq5hceo6syx" path="res://Art/GameUi/03potions/home_buttons.png" id="13_t0prn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xk68k"]
+bg_color = Color(0, 0.713726, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54s82"]
+bg_color = Color(1, 0.32549, 0.388235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8t1v"]
+bg_color = Color(0.866667, 0.701961, 0, 1)
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d7ka4")
+Menu = "res://MainScenes/Other/menu.tscn"
+
+[node name="ShopItems" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 86.0
+offset_right = 302.0
+offset_bottom = 248.0
+scale = Vector2(2.5, 2.5)
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="Item1" type="TextureButton" parent="ShopItems"]
+layout_mode = 2
+texture_normal = ExtResource("1_r5xyx")
+script = ExtResource("3_i83y1")
+
+[node name="VolcanoDagger" type="TextureRect" parent="ShopItems/Item1"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 58.0
+texture = ExtResource("3_s5fjw")
+expand_mode = 1
+
+[node name="Item2" type="TextureButton" parent="ShopItems"]
+layout_mode = 2
+texture_normal = ExtResource("1_r5xyx")
+script = ExtResource("3_i83y1")
+_num = 1
+
+[node name="BlueShield" type="TextureRect" parent="ShopItems/Item2"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 58.0
+texture = ExtResource("3_kxnfg")
+expand_mode = 1
+
+[node name="Item3" type="TextureButton" parent="ShopItems"]
+layout_mode = 2
+texture_normal = ExtResource("1_r5xyx")
+script = ExtResource("3_i83y1")
+_num = 2
+
+[node name="LeafWand" type="TextureRect" parent="ShopItems/Item3"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 58.0
+texture = ExtResource("4_wc3q5")
+expand_mode = 1
+
+[node name="Item4" type="TextureButton" parent="ShopItems"]
+layout_mode = 2
+texture_normal = ExtResource("1_r5xyx")
+script = ExtResource("3_i83y1")
+_num = 3
+
+[node name="ThrowingKnives" type="TextureRect" parent="ShopItems/Item4"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 58.0
+texture = ExtResource("5_0mxi3")
+expand_mode = 1
+
+[node name="Item5" type="TextureButton" parent="ShopItems"]
+layout_mode = 2
+texture_normal = ExtResource("1_r5xyx")
+script = ExtResource("3_i83y1")
+_num = 4
+
+[node name="ToothBlade" type="TextureRect" parent="ShopItems/Item5"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 58.0
+texture = ExtResource("6_q1hiv")
+expand_mode = 1
+
+[node name="Item6" type="TextureButton" parent="ShopItems"]
+layout_mode = 2
+texture_normal = ExtResource("1_r5xyx")
+script = ExtResource("3_i83y1")
+_num = 5
+
+[node name="EnchantedAxe" type="TextureRect" parent="ShopItems/Item6"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 58.0
+texture = ExtResource("7_4w122")
+expand_mode = 1
+
+[node name="Coins" type="Label" parent="."]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 17.0
+offset_right = 1086.0
+offset_bottom = 59.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_fi0b8")
+theme_override_font_sizes/font_size = 30
+text = "0 Coins"
+horizontal_alignment = 1
+
+[node name="GreenRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 732.0
+offset_top = 83.0
+offset_right = 1086.0
+offset_bottom = 508.0
+texture = ExtResource("11_j18h4")
+
+[node name="BeigeRect" type="TextureRect" parent="GreenRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -147.5
+offset_right = 137.0
+offset_bottom = 147.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_q3251")
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Home" type="TextureButton" parent="Buttons"]
+offset_right = 66.0
+offset_bottom = 66.0
+texture_normal = ExtResource("13_t0prn")
+
+[node name="Equip" type="Button" parent="Buttons"]
+visible = false
+offset_left = 833.0
+offset_top = 374.0
+offset_right = 989.0
+offset_bottom = 426.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_fi0b8")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_xk68k")
+text = "Equip"
+
+[node name="Unequip" type="Button" parent="Buttons"]
+visible = false
+offset_left = 833.0
+offset_top = 374.0
+offset_right = 989.0
+offset_bottom = 426.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_fi0b8")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_54s82")
+text = "Unequip"
+
+[node name="Buy" type="Button" parent="Buttons"]
+offset_left = 833.0
+offset_top = 374.0
+offset_right = 989.0
+offset_bottom = 426.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_fi0b8")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8t1v")
+text = "Buy"
+
+[node name="ItemDescriptions" type="Node" parent="."]
+
+[node name="Item1" type="Label" parent="ItemDescriptions"]
+visible = false
+offset_left = 775.0
+offset_top = 166.0
+offset_right = 1038.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_fi0b8")
+text = "Volcanic Dagger:
+
+Forged in the fiery depths of an erupting volcano, this masterful blade increases Rogue Attack by +1
+
+Price: 20 Coins"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Item2" type="Label" parent="ItemDescriptions"]
+visible = false
+offset_left = 775.0
+offset_top = 166.0
+offset_right = 1043.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_fi0b8")
+text = "Blue Enchanted Shield:
+
+Made with secret elven knowledge this enchanted shield can grant any brave Knight who wields it +10 Max Health
+
+Price: 20 Coins"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Item3" type="Label" parent="ItemDescriptions"]
+visible = false
+offset_left = 775.0
+offset_top = 166.0
+offset_right = 1043.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_fi0b8")
+text = "Sacred Tree Staff:
+
+A staff made from Yggdrasil the world tree, it has an amplifying affect on all Mage's Magic increasing their Attack by +1
+
+Price: 30 Coins"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Item4" type="Label" parent="ItemDescriptions"]
+visible = false
+offset_left = 775.0
+offset_top = 166.0
+offset_right = 1043.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_fi0b8")
+text = "Ninja Throwing Knives:
+
+Lightweight Knives crafted in a hidden ninja village skilled Rogues have their Speed boosted by +10 because of the decreased weight
+
+Price: 30 Coins"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Item5" type="Label" parent="ItemDescriptions"]
+visible = false
+offset_left = 775.0
+offset_top = 166.0
+offset_right = 1043.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_fi0b8")
+text = "Berserkers Blade:
+
+A blade that has the spirit of a proud berserker, It saps a Knight's max health by -10 but increases their Attack by +2
+
+Price: 30 Coins"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Item6" type="Label" parent="ItemDescriptions"]
+visible = false
+offset_left = 775.0
+offset_top = 166.0
+offset_right = 1043.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_fi0b8")
+text = "Enchanted Axe:
+
+An Axe that magically increases any Mage's speed by +10, How does it work? It's magic
+
+Price: 20 Coins"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="ModifiedPressed" from="ShopItems/Item1" to="." method="PressItem"]
+[connection signal="ModifiedPressed" from="ShopItems/Item2" to="." method="PressItem"]
+[connection signal="ModifiedPressed" from="ShopItems/Item3" to="." method="PressItem"]
+[connection signal="ModifiedPressed" from="ShopItems/Item4" to="." method="PressItem"]
+[connection signal="ModifiedPressed" from="ShopItems/Item5" to="." method="PressItem"]
+[connection signal="ModifiedPressed" from="ShopItems/Item6" to="." method="PressItem"]
+[connection signal="pressed" from="Buttons/Home" to="." method="ReturnToMenu"]
+[connection signal="pressed" from="Buttons/Equip" to="." method="Equip"]
+[connection signal="pressed" from="Buttons/Unequip" to="." method="Unequip"]
+[connection signal="pressed" from="Buttons/Buy" to="." method="Buy"]

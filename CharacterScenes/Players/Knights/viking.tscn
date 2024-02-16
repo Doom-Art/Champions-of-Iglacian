@@ -1,0 +1,227 @@
+[gd_scene load_steps=49 format=3 uid="uid://dj7ol7p0le4n0"]
+
+[ext_resource type="PackedScene" uid="uid://cttjhkf0jyr1p" path="res://CharacterScenes/Players/Knights/base_knight.tscn" id="1_dhgxp"]
+[ext_resource type="Texture2D" uid="uid://bwm2hftenaw2y" path="res://Art/PixelArtCharacters/Viking/Attack/attack0.png" id="2_7vupr"]
+[ext_resource type="Texture2D" uid="uid://bb2np2ruh7bda" path="res://Art/PixelArtCharacters/Viking/Attack/attack1.png" id="3_j551c"]
+[ext_resource type="Texture2D" uid="uid://bj42ugo7gofxh" path="res://Art/PixelArtCharacters/Viking/Attack/attack2.png" id="4_8po2v"]
+[ext_resource type="Texture2D" uid="uid://dq2xcopoguian" path="res://Art/PixelArtCharacters/Viking/Attack/attack3.png" id="5_wvtrf"]
+[ext_resource type="Texture2D" uid="uid://mtu34soai27x" path="res://Art/PixelArtCharacters/Viking/Attack/attack4.png" id="6_8p8un"]
+[ext_resource type="Texture2D" uid="uid://bouy375mybskf" path="res://Art/PixelArtCharacters/Viking/Death/death1.png" id="7_cni31"]
+[ext_resource type="Texture2D" uid="uid://kxwdupkkm7wk" path="res://Art/PixelArtCharacters/Viking/Death/death2.png" id="8_wi68x"]
+[ext_resource type="Texture2D" uid="uid://cghlqq5emag3s" path="res://Art/PixelArtCharacters/Viking/Death/death3.png" id="9_3nd1f"]
+[ext_resource type="Texture2D" uid="uid://31hhhtt6lelq" path="res://Art/PixelArtCharacters/Viking/Death/death4.png" id="10_4a1h7"]
+[ext_resource type="Texture2D" uid="uid://cgsn8pdufmua8" path="res://Art/PixelArtCharacters/Viking/Death/death5.png" id="11_p6plo"]
+[ext_resource type="Texture2D" uid="uid://bga8408nw8hoj" path="res://Art/PixelArtCharacters/Viking/Death/death6.png" id="12_ahqoq"]
+[ext_resource type="Texture2D" uid="uid://bmf3772sl6m2o" path="res://Art/PixelArtCharacters/Viking/Death/death7.png" id="13_wgamb"]
+[ext_resource type="Texture2D" uid="uid://88kroggna24w" path="res://Art/PixelArtCharacters/Viking/Death/death8.png" id="14_bryjs"]
+[ext_resource type="Texture2D" uid="uid://bc7vq3s6sp6mf" path="res://Art/PixelArtCharacters/Viking/Death/death9.png" id="15_ubl5v"]
+[ext_resource type="Texture2D" uid="uid://kq2pbe11q4hj" path="res://Art/PixelArtCharacters/Viking/Death/death10.png" id="16_h5a1v"]
+[ext_resource type="Texture2D" uid="uid://dkpekdrftiugh" path="res://Art/PixelArtCharacters/Viking/Hurt/hurt1.png" id="17_fn2t1"]
+[ext_resource type="Texture2D" uid="uid://nmthps1m3xe5" path="res://Art/PixelArtCharacters/Viking/Hurt/hurt2.png" id="18_4d125"]
+[ext_resource type="Texture2D" uid="uid://br5kbviugx65p" path="res://Art/PixelArtCharacters/Viking/Hurt/hurt3.png" id="19_w01sc"]
+[ext_resource type="Texture2D" uid="uid://cvaa8ddja8mmi" path="res://Art/PixelArtCharacters/Viking/Hurt/hurt4.png" id="20_t24ht"]
+[ext_resource type="Texture2D" uid="uid://c4n62tlvdlnlc" path="res://Art/PixelArtCharacters/Viking/Idle/idle1.png" id="21_m1fur"]
+[ext_resource type="Texture2D" uid="uid://bqpig6dwydwq5" path="res://Art/PixelArtCharacters/Viking/Idle/idle2.png" id="22_y0g3f"]
+[ext_resource type="Texture2D" uid="uid://bvi3oddmndv0v" path="res://Art/PixelArtCharacters/Viking/Idle/idle3.png" id="23_eadr3"]
+[ext_resource type="Texture2D" uid="uid://cgbj6xjnhvymb" path="res://Art/PixelArtCharacters/Viking/Idle/idle4.png" id="24_amlm0"]
+[ext_resource type="Texture2D" uid="uid://wpryob3fjvjl" path="res://Art/PixelArtCharacters/Viking/Idle/idle5.png" id="25_b1jhs"]
+[ext_resource type="Texture2D" uid="uid://7baphype7o04" path="res://Art/PixelArtCharacters/Viking/Idle/idle6.png" id="26_ptc8s"]
+[ext_resource type="Texture2D" uid="uid://ctnxmal3agnjl" path="res://Art/PixelArtCharacters/Viking/Idle/idle7.png" id="27_cs8oq"]
+[ext_resource type="Texture2D" uid="uid://b0vyuxwo4mrn3" path="res://Art/PixelArtCharacters/Viking/Idle/idle8.png" id="28_5kvw4"]
+[ext_resource type="Texture2D" uid="uid://dyopuhksrtc72" path="res://Art/PixelArtCharacters/Viking/Idle/idle9.png" id="29_lcnne"]
+[ext_resource type="Texture2D" uid="uid://xm1l6mt1s8ff" path="res://Art/PixelArtCharacters/Viking/Idle/idle10.png" id="30_xe34s"]
+[ext_resource type="Texture2D" uid="uid://c2ln5m2d2p7ut" path="res://Art/PixelArtCharacters/Viking/Idle/idle11.png" id="31_ngppf"]
+[ext_resource type="Texture2D" uid="uid://buomvjdv5ju3g" path="res://Art/PixelArtCharacters/Viking/Idle/idle12.png" id="32_dnjwu"]
+[ext_resource type="Texture2D" uid="uid://c52ygxta85glu" path="res://Art/PixelArtCharacters/Viking/Jump/jump1.png" id="33_shwf4"]
+[ext_resource type="Texture2D" uid="uid://kyjtfoklo2o8" path="res://Art/PixelArtCharacters/Viking/Jump/jump2.png" id="34_mffn4"]
+[ext_resource type="Texture2D" uid="uid://ewnxb6g3u51n" path="res://Art/PixelArtCharacters/Viking/Jump/jump3.png" id="35_jnh6g"]
+[ext_resource type="Texture2D" uid="uid://bnp8g7oqlp620" path="res://Art/PixelArtCharacters/Viking/Jump/jump4.png" id="36_8ufn7"]
+[ext_resource type="Texture2D" uid="uid://d2mqnvxh0dg4l" path="res://Art/PixelArtCharacters/Viking/Jump/jump5.png" id="37_mjx67"]
+[ext_resource type="Texture2D" uid="uid://delpaixebx631" path="res://Art/PixelArtCharacters/Viking/Jump/jump6.png" id="38_6ikfv"]
+[ext_resource type="Texture2D" uid="uid://by7r7fu4qsnp5" path="res://Art/PixelArtCharacters/Viking/Jump/jump7.png" id="39_021by"]
+[ext_resource type="Texture2D" uid="uid://xs0ltwyfv3v5" path="res://Art/PixelArtCharacters/Viking/Run/run1.png" id="40_4air7"]
+[ext_resource type="Texture2D" uid="uid://cs5ssdv7oqoib" path="res://Art/PixelArtCharacters/Viking/Run/run2.png" id="41_wr07m"]
+[ext_resource type="Texture2D" uid="uid://cw475btvkhhv" path="res://Art/PixelArtCharacters/Viking/Run/run3.png" id="42_upxdo"]
+[ext_resource type="Texture2D" uid="uid://dluct0lj3xiav" path="res://Art/PixelArtCharacters/Viking/Run/run4.png" id="43_4x0nb"]
+[ext_resource type="Texture2D" uid="uid://svncqwu5nafe" path="res://Art/PixelArtCharacters/Viking/Run/run5.png" id="44_v353f"]
+[ext_resource type="Texture2D" uid="uid://cikeo82b7onus" path="res://Art/PixelArtCharacters/Viking/Run/run6.png" id="45_vdyxm"]
+[ext_resource type="Texture2D" uid="uid://ciu6s3d2rokuy" path="res://Art/PixelArtCharacters/Viking/Run/run7.png" id="46_wyysd"]
+[ext_resource type="Texture2D" uid="uid://dk451xpjwlabj" path="res://Art/PixelArtCharacters/Viking/Run/run8.png" id="47_didod"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fa2xx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7vupr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j551c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8po2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wvtrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8p8un")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_cni31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wi68x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3nd1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4a1h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_p6plo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ahqoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wgamb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_bryjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ubl5v")
+}, {
+"duration": 3.0,
+"texture": ExtResource("16_h5a1v")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_fn2t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4d125")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_w01sc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_t24ht")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_m1fur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_y0g3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_eadr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_amlm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_b1jhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ptc8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_cs8oq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_5kvw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_lcnne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_xe34s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ngppf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_dnjwu")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_shwf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_mffn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_jnh6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_8ufn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_mjx67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_6ikfv")
+}, {
+"duration": 10.0,
+"texture": ExtResource("39_021by")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_4air7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_wr07m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_upxdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_4x0nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_v353f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_vdyxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_wyysd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_didod")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 9.0
+}]
+
+[node name="Viking" instance=ExtResource("1_dhgxp")]
+attackDmg = 6
+
+[node name="AnimatedSprite2D" parent="Flip" index="0"]
+sprite_frames = SubResource("SpriteFrames_fa2xx")
+animation = &"Walk"

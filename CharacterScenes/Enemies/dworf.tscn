@@ -1,0 +1,170 @@
+[gd_scene load_steps=28 format=3 uid="uid://b0w8m1ib5ntai"]
+
+[ext_resource type="Texture2D" uid="uid://u0xef6nr6toj" path="res://Art/Monsters/Dworf/Attack1.png" id="1_0suej"]
+[ext_resource type="Script" path="res://CharacterScenes/Enemies/Dworf.cs" id="1_nayon"]
+[ext_resource type="Texture2D" uid="uid://b6v1swwcddqyh" path="res://Art/Monsters/Dworf/Attack2.png" id="2_8ac64"]
+[ext_resource type="Texture2D" uid="uid://bjuwcl2hpmty7" path="res://Art/Monsters/Dworf/tack3.png" id="3_yeoxb"]
+[ext_resource type="Texture2D" uid="uid://t766di6bvlut" path="res://Art/Monsters/Dworf/tack4.png" id="4_24qwa"]
+[ext_resource type="Texture2D" uid="uid://36vtwcgkhovo" path="res://Art/Monsters/Dworf/tack5.png" id="5_17mwn"]
+[ext_resource type="Texture2D" uid="uid://b05d5leueyy22" path="res://Art/Monsters/Dworf/Death1.png" id="6_j6c5e"]
+[ext_resource type="Texture2D" uid="uid://by4ifqy27pf0l" path="res://Art/Monsters/Dworf/Death2.png" id="7_j10qc"]
+[ext_resource type="Texture2D" uid="uid://bd12s3cswktd7" path="res://Art/Monsters/Dworf/Death3.png" id="8_fad55"]
+[ext_resource type="Texture2D" uid="uid://bnm1usra56fye" path="res://Art/Monsters/Dworf/Death4.png" id="9_1dl18"]
+[ext_resource type="Texture2D" uid="uid://bjnso1supf62t" path="res://Art/Monsters/Dworf/Death5.png" id="10_8y1tr"]
+[ext_resource type="Texture2D" uid="uid://b1up6smdhfffc" path="res://Art/Monsters/Dworf/Hurt1.png" id="11_dtdp6"]
+[ext_resource type="Texture2D" uid="uid://bhkc4vtkicji1" path="res://Art/Monsters/Dworf/Hurt2.png" id="12_gffvr"]
+[ext_resource type="Texture2D" uid="uid://djjv2n2pm4gft" path="res://Art/Monsters/Dworf/Walk1.png" id="13_5arxu"]
+[ext_resource type="Texture2D" uid="uid://dtm2rgq27dd8s" path="res://Art/Monsters/Dworf/Walk2.png" id="14_isx77"]
+[ext_resource type="Texture2D" uid="uid://cfoh8bt1auhul" path="res://Art/Monsters/Dworf/Walk3.png" id="15_5l2p1"]
+[ext_resource type="Texture2D" uid="uid://b33g6u7uufyqg" path="res://Art/Monsters/Dworf/Walk4.png" id="16_jd4ie"]
+[ext_resource type="Texture2D" uid="uid://b0jvudk7dyukq" path="res://Art/Monsters/Dworf/Walk5.png" id="17_y5sec"]
+[ext_resource type="Texture2D" uid="uid://stx7l3tgmkdr" path="res://Art/Monsters/Dworf/Walk6.png" id="18_tpu3v"]
+[ext_resource type="PackedScene" uid="uid://wkdlcfqhlwky" path="res://Components/health_component.tscn" id="20_ouxv7"]
+[ext_resource type="Texture2D" uid="uid://dsxi2qdf66bxi" path="res://Art/GameUi/16Inner_Interface/hp_full.png" id="21_33a8g"]
+[ext_resource type="PackedScene" uid="uid://2gcqpklkryyc" path="res://Components/hit_box_component.tscn" id="22_o2086"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qb3o8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0suej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8ac64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yeoxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_24qwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_17mwn")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_j6c5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j10qc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fad55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1dl18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8y1tr")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_dtdp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gffvr")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_5arxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_isx77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5l2p1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jd4ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_y5sec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_tpu3v")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 11.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cq8m1"]
+radius = 15.0
+height = 46.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcamb"]
+size = Vector2(20, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0e0b"]
+size = Vector2(11, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48ac8"]
+size = Vector2(37.5, 49)
+
+[node name="Dworf" type="CharacterBody2D" groups=["mobs"]]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_nayon")
+Speed = 210.0
+JumpHeight = -700.0
+atkDmg = 2
+maxRange = 45
+atkLag = 0.2
+KnockbackResist = 0.6
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(17, -9)
+sprite_frames = SubResource("SpriteFrames_qb3o8")
+animation = &"Walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -4)
+shape = SubResource("CapsuleShape2D_cq8m1")
+
+[node name="AttackBox" type="Area2D" parent="."]
+position = Vector2(14, -9)
+collision_layer = 0
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox"]
+position = Vector2(19, 3)
+shape = SubResource("RectangleShape2D_fcamb")
+
+[node name="WalkHitBox" type="CollisionShape2D" parent="AttackBox"]
+position = Vector2(8.5, 3)
+shape = SubResource("RectangleShape2D_e0e0b")
+disabled = true
+
+[node name="HealthComponent" parent="." instance=ExtResource("20_ouxv7")]
+position = Vector2(22, -3)
+maxHealth = 40
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="HealthComponent"]
+offset_left = -74.0
+offset_top = -45.0
+offset_right = 37.0
+offset_bottom = -33.0
+value = 100.0
+texture_progress = ExtResource("21_33a8g")
+
+[node name="HitBoxComponent" parent="." instance=ExtResource("22_o2086")]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
+position = Vector2(-0.75, -5)
+shape = SubResource("RectangleShape2D_48ac8")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="AnimationFinished"]
+[connection signal="area_entered" from="AttackBox" to="." method="OnAttackBoxEntered"]

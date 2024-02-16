@@ -1,0 +1,105 @@
+[gd_scene load_steps=13 format=3 uid="uid://3eyl3wiafrjw"]
+
+[ext_resource type="Texture2D" uid="uid://beonnfn0hn0mt" path="res://Art/Objects/CaveDetails/trap1.png" id="1_3tsmd"]
+[ext_resource type="Script" path="res://LevelComponents/PitFall.cs" id="1_hk5tq"]
+[ext_resource type="Texture2D" uid="uid://cy6y5cpwd1d37" path="res://Art/Tiles/CaveSpriteSheet.png" id="1_xwwgc"]
+[ext_resource type="Texture2D" uid="uid://chsrvixcex7yt" path="res://Art/Objects/CaveDetails/trap2.png" id="2_e3vhm"]
+[ext_resource type="Texture2D" uid="uid://rrjwc7c2ggqx" path="res://Art/Objects/CaveDetails/trap3.png" id="3_jj8pl"]
+[ext_resource type="Texture2D" uid="uid://ctw0bbmgsh25h" path="res://Art/Objects/CaveDetails/trap4.png" id="4_bp8se"]
+[ext_resource type="Texture2D" uid="uid://b0tabi3ogh8rl" path="res://Art/Objects/CaveDetails/trap5.png" id="5_0j3ym"]
+[ext_resource type="Texture2D" uid="uid://dxfygt31nt27i" path="res://Art/Objects/CaveDetails/trap6.png" id="6_nakt6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a1wtx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e3vhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jj8pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bp8se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0j3ym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nakt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_3tsmd")
+}],
+"loop": false,
+"name": &"Fall",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_nakt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0j3ym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bp8se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jj8pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_e3vhm")
+}],
+"loop": false,
+"name": &"Rebuild",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifwxc"]
+size = Vector2(44, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_volr3"]
+size = Vector2(77, 34)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_g4w0m"]
+b = Vector2(81, 0)
+
+[node name="PitFall" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_hk5tq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xwwgc")
+region_enabled = true
+region_rect = Rect2(252, 8, 78, 56)
+
+[node name="Trap1" type="Sprite2D" parent="."]
+texture = ExtResource("1_3tsmd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a1wtx")
+animation = &"Fall"
+
+[node name="Detect" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_ifwxc")
+
+[node name="SpikesHitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikesHitBox"]
+position = Vector2(0.5, 12)
+shape = SubResource("RectangleShape2D_volr3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-40, -21)
+shape = SubResource("SegmentShape2D_g4w0m")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="AnimationFinished"]
+[connection signal="area_entered" from="Detect" to="." method="Collapse"]
+[connection signal="area_entered" from="SpikesHitBox" to="." method="Damage"]

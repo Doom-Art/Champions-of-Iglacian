@@ -1,0 +1,67 @@
+[gd_scene load_steps=14 format=3 uid="uid://cqha0nodiyqne"]
+
+[ext_resource type="Script" path="res://LevelComponents/Heart.cs" id="1_oqkhh"]
+[ext_resource type="Texture2D" uid="uid://cdnari20p8n1p" path="res://Art/Objects/Heart/heart1.png" id="2_ylvpy"]
+[ext_resource type="Texture2D" uid="uid://hgrxnry2da75" path="res://Art/Objects/Heart/heart2.png" id="3_tnryx"]
+[ext_resource type="Texture2D" uid="uid://crwlbrginuasm" path="res://Art/Objects/Heart/heart3.png" id="4_ls70w"]
+[ext_resource type="Texture2D" uid="uid://ce7oo31eugd1m" path="res://Art/Objects/Heart/heart4.png" id="5_jyj4g"]
+[ext_resource type="Texture2D" uid="uid://b41xmlpfs6ykf" path="res://Art/Objects/Heart/heart5.png" id="6_7bkjv"]
+[ext_resource type="Texture2D" uid="uid://biqmqkjif7gwt" path="res://Art/Objects/Heart/heart6.png" id="7_ad6wf"]
+[ext_resource type="Texture2D" uid="uid://ccoo1yyg3mkhm" path="res://Art/Objects/Heart/heart7.png" id="8_lvebg"]
+[ext_resource type="Texture2D" uid="uid://cdyhfgbhoh13l" path="res://Art/Objects/Heart/heart8.png" id="9_34j5i"]
+[ext_resource type="Texture2D" uid="uid://6ra4l4upjqlc" path="res://Art/Objects/Heart/heart9.png" id="10_d8veb"]
+[ext_resource type="Texture2D" uid="uid://b58lsdeclkb2c" path="res://Art/Objects/Heart/heart10.png" id="11_mxd7k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76qx2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ylvpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tnryx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ls70w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jyj4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7bkjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ad6wf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lvebg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_34j5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_d8veb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mxd7k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfcnm"]
+
+[node name="Heart" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_oqkhh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_76qx2")
+autoplay = "default"
+frame_progress = 0.502525
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lfcnm")
+
+[connection signal="area_entered" from="." to="." method="OnAreaEntered"]

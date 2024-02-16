@@ -1,0 +1,137 @@
+[gd_scene load_steps=12 format=3 uid="uid://cv2mgq755o6fe"]
+
+[ext_resource type="Script" path="res://LevelComponents/InGameUI.cs" id="1_oxbf0"]
+[ext_resource type="FontFile" uid="uid://17l0u1bvu0je" path="res://Fonts/SmackyFormula.ttf" id="2_cqkh2"]
+[ext_resource type="Texture2D" uid="uid://xxi0yvvcbd6b" path="res://Art/GameUi/14Pause/Pause.png" id="3_hx45x"]
+[ext_resource type="Shader" path="res://LevelComponents/in_game_ui.gdshader" id="3_p4bxu"]
+[ext_resource type="Texture2D" uid="uid://bbn4lnd6y3vcx" path="res://Art/GameUi/14Pause/button.png" id="4_ec7v6"]
+[ext_resource type="Texture2D" uid="uid://rw3opool2f8i" path="res://Art/GameUi/14Pause/button_yellow.png" id="5_ayw6b"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ko1c1"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_0x6t1"]
+events = [SubResource("InputEventKey_ko1c1")]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g7024"]
+shader = ExtResource("3_p4bxu")
+shader_parameter/amount = 1.0
+
+[sub_resource type="InputEventKey" id="InputEventKey_i5egw"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_j4bci"]
+events = [SubResource("InputEventKey_i5egw")]
+
+[node name="InGameUI" type="CanvasLayer"]
+
+[node name="InGameUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oxbf0")
+
+[node name="Pause" type="Button" parent="InGameUI"]
+layout_mode = 1
+offset_left = 1074.0
+offset_top = 14.0
+offset_right = 1134.0
+offset_bottom = 74.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_cqkh2")
+theme_override_font_sizes/font_size = 40
+shortcut = SubResource("Shortcut_0x6t1")
+shortcut_in_tooltip = false
+text = "| |"
+
+[node name="PausePanel" type="Control" parent="InGameUI"]
+process_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="InGameUI/PausePanel"]
+material = SubResource("ShaderMaterial_g7024")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseLabel" type="TextureRect" parent="InGameUI/PausePanel"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 206.0
+offset_right = 622.0
+offset_bottom = 269.0
+texture = ExtResource("3_hx45x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InGameUI/PausePanel"]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 286.0
+offset_right = 628.0
+offset_bottom = 402.0
+
+[node name="Resume" type="TextureButton" parent="InGameUI/PausePanel/VBoxContainer"]
+layout_mode = 2
+shortcut = SubResource("Shortcut_j4bci")
+shortcut_in_tooltip = false
+texture_normal = ExtResource("4_ec7v6")
+texture_hover = ExtResource("5_ayw6b")
+
+[node name="Label" type="Label" parent="InGameUI/PausePanel/VBoxContainer/Resume"]
+layout_mode = 0
+offset_right = 164.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_cqkh2")
+text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="TextureButton" parent="InGameUI/PausePanel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_ec7v6")
+texture_hover = ExtResource("5_ayw6b")
+
+[node name="Label" type="Label" parent="InGameUI/PausePanel/VBoxContainer/Restart"]
+layout_mode = 0
+offset_right = 164.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_cqkh2")
+text = "Restart
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="TextureButton" parent="InGameUI/PausePanel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_ec7v6")
+texture_hover = ExtResource("5_ayw6b")
+
+[node name="Label" type="Label" parent="InGameUI/PausePanel/VBoxContainer/Exit"]
+layout_mode = 0
+offset_right = 164.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_cqkh2")
+text = "Home"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="InGameUI/Pause" to="InGameUI" method="Pause"]
+[connection signal="pressed" from="InGameUI/PausePanel/VBoxContainer/Resume" to="InGameUI" method="Resume"]
+[connection signal="pressed" from="InGameUI/PausePanel/VBoxContainer/Restart" to="InGameUI" method="Restart"]
+[connection signal="pressed" from="InGameUI/PausePanel/VBoxContainer/Exit" to="InGameUI" method="Exit"]

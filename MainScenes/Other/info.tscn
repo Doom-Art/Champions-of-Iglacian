@@ -1,0 +1,243 @@
+[gd_scene load_steps=7 format=3 uid="uid://byuiiduim8rn6"]
+
+[ext_resource type="Texture2D" uid="uid://c2ok11aejqnkc" path="res://Art/GameUi/02character/char_bg.png" id="1_36n0y"]
+[ext_resource type="Script" path="res://MainScenes/Other/InfoPage.cs" id="1_stsdr"]
+[ext_resource type="Texture2D" uid="uid://ctirgd4fiyb2t" path="res://Art/GameUi/02character/forward_button.png" id="2_4ywg0"]
+[ext_resource type="Texture2D" uid="uid://da4n0k0l2hkaw" path="res://Art/GameUi/02character/backward_button.png" id="3_n4n4p"]
+[ext_resource type="FontFile" uid="uid://17l0u1bvu0je" path="res://Fonts/SmackyFormula.ttf" id="4_iv0p1"]
+[ext_resource type="Texture2D" uid="uid://2jrtljmv4e6m" path="res://Art/GameUi/02character/home_buttons.png" id="5_kuyyx"]
+
+[node name="Info" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_stsdr")
+Menu = "res://MainScenes/Other/menu.tscn"
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_36n0y")
+expand_mode = 1
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Next" type="TextureButton" parent="Buttons"]
+offset_left = 1007.0
+offset_top = 546.0
+offset_right = 1073.0
+offset_bottom = 612.0
+texture_normal = ExtResource("2_4ywg0")
+
+[node name="Back" type="TextureButton" parent="Buttons"]
+offset_left = 92.0
+offset_top = 528.0
+offset_right = 158.0
+offset_bottom = 594.0
+texture_normal = ExtResource("3_n4n4p")
+
+[node name="Home" type="TextureButton" parent="Buttons"]
+offset_left = 72.0
+offset_top = 27.0
+offset_right = 138.0
+offset_bottom = 93.0
+texture_normal = ExtResource("5_kuyyx")
+
+[node name="Welcome" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 45.0
+offset_right = 900.0
+offset_bottom = 545.0
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="Welcome"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_iv0p1")
+theme_override_font_sizes/font_size = 40
+text = "Background Lore
+
+"
+horizontal_alignment = 1
+
+[node name="Lore" type="Label" parent="Welcome"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_iv0p1")
+theme_override_font_sizes/font_size = 20
+text = "Welcome to Iglacian!  
+
+We were once a prosperous world with magical and beautiful lands where our people lived in peace. But one of our overlords, Lord Shidan, had a quest for power that could not be stopped. He cursed our lands and turned peaceful creatures into monsters who sought to destroy all who crossed their paths. Our efforts to stop him came to no avail. We are now the ones hunted and we hide in the caves, the forests and the mountains. Those whom Lord Shidan has captured are in his deepest and darkest dungeon.  
+
+We need your help to fight the monsters and help us reclaim our lands and our peaceful existence. "
+autowrap_mode = 3
+
+[node name="HowToPlay" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 280.0
+offset_top = 45.0
+offset_right = 900.0
+offset_bottom = 545.0
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="HowToPlay"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_iv0p1")
+theme_override_font_sizes/font_size = 40
+text = "How To Play
+
+"
+horizontal_alignment = 1
+
+[node name="HowToPlay" type="Label" parent="HowToPlay"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_iv0p1")
+theme_override_font_sizes/font_size = 24
+text = "Chose your champion from one of nine characters, each with unique skills and stats, and enter different parts of our magical world where you will face with monsters who will try to prevent you from leaving their territory. While the default keys will allow you to begin immediately, you can alter the keybindings in the settings menu. Grab your healing hearts every chance you get. Coins you collect will enable you to obtain upgrades for your character as you help save Iglacian!"
+autowrap_mode = 3
+
+[node name="GameObjective" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 280.0
+offset_top = 45.0
+offset_right = 900.0
+offset_bottom = 545.0
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="GameObjective"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_iv0p1")
+theme_override_font_sizes/font_size = 40
+text = "Game Objective
+
+"
+horizontal_alignment = 1
+
+[node name="Levels" type="Label" parent="GameObjective"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_iv0p1")
+theme_override_font_sizes/font_size = 24
+text = "In each level the goal is to obtain the required kills that will allow you to exit that level. The amount of kills you need vary level by level. Your current progress will always be listed above the Exit."
+autowrap_mode = 3
+
+[node name="Enemies" type="Label" parent="GameObjective"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_iv0p1")
+theme_override_font_sizes/font_size = 24
+text = "Enemies:
+All the enemies have but one objective, to kill the player. They will go to where you are whenever possible and will always try to attack you when within the appropriate range."
+autowrap_mode = 3
+
+[node name="ClassInfo" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 280.0
+offset_top = 45.0
+offset_right = 900.0
+offset_bottom = 545.0
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="ClassInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_iv0p1")
+theme_override_font_sizes/font_size = 40
+text = "Class Information
+
+"
+horizontal_alignment = 1
+
+[node name="RougueInfo" type="Label" parent="ClassInfo"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_iv0p1")
+text = "Rougues:
+Weapon: Twin Daggers, Attacks Last for a long time but have a small Hitbox
+Base Stats: 60 Health, 310 Speed, 6 Attack
+Overall: Best for players with medium-high level of control"
+
+[node name="KnightInfo" type="Label" parent="ClassInfo"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_iv0p1")
+text = "Knights:
+Weapon: Single Sword, Quick Attack with medium range
+Base Stats: 90 Health, 290 Speed, 4 Attack
+Overall: Best for players who mostly stay in one spot and spam attacks"
+
+[node name="MageInfo" type="Label" parent="ClassInfo"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_iv0p1")
+text = "Mages:
+Weapon: Magic, All the mages shoot their spell towards the cursor location, recommended to use click attack rather than quick attack keybind
+Base Stats: 50 Health, 300 Speed, 9 Attack
+Overall: Best for players who want to use ranged attacks"
+autowrap_mode = 3
+
+[node name="Credits" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 280.0
+offset_top = 45.0
+offset_right = 900.0
+offset_bottom = 558.0
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="Credits"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_iv0p1")
+theme_override_font_sizes/font_size = 40
+text = "Credits
+
+"
+horizontal_alignment = 1
+
+[node name="Credits" type="Label" parent="Credits"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_iv0p1")
+theme_override_font_sizes/font_size = 24
+text = "Programmer: Kian Dufraimont
+
+Story Proofwriter: Shiva Rouhani
+
+Art: Craftpix.Net"
+
+[connection signal="pressed" from="Buttons/Next" to="." method="NextButton"]
+[connection signal="pressed" from="Buttons/Back" to="." method="BackButton"]
+[connection signal="pressed" from="Buttons/Home" to="." method="ReturnToMenu"]

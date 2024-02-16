@@ -1,0 +1,164 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwa311ynpxysj"]
+
+[ext_resource type="Script" path="res://MainScenes/Other/Settings.cs" id="1_d3pgw"]
+[ext_resource type="Script" path="res://Sounds/AudioSlider.cs" id="1_p84qn"]
+[ext_resource type="Texture2D" uid="uid://bvy85rkmjio3q" path="res://Art/GameUi/05ogin&pass/loghin_pass_full)window.png" id="2_8pvnx"]
+[ext_resource type="FontFile" uid="uid://17l0u1bvu0je" path="res://Fonts/SmackyFormula.ttf" id="3_5v6gu"]
+[ext_resource type="Texture2D" uid="uid://cdgfw8da2uwrj" path="res://Art/GameUi/05ogin&pass/beige_border2.png" id="4_xifdr"]
+[ext_resource type="Texture2D" uid="uid://omcs640i3jj8" path="res://Art/GameUi/06Level_select/x_button.png" id="6_nktbw"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d3pgw")
+menuFilePath = "res://MainScenes/Other/menu.tscn"
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_8pvnx")
+
+[node name="Label" type="Label" parent="BG"]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 23.0
+offset_right = 903.0
+offset_bottom = 140.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_5v6gu")
+theme_override_font_sizes/font_size = 70
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeSliders" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 772.0
+offset_top = 211.0
+offset_right = 1063.0
+offset_bottom = 453.0
+texture = ExtResource("4_xifdr")
+expand_mode = 1
+
+[node name="Sliders" type="VBoxContainer" parent="VolumeSliders"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 253.0
+offset_bottom = 242.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VolumeSliders/Sliders"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="MasterVolume" type="HSlider" parent="VolumeSliders/Sliders"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("1_p84qn")
+_busName = "Master"
+
+[node name="Label2" type="Label" parent="VolumeSliders/Sliders"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+text = "Music  Volume"
+horizontal_alignment = 1
+
+[node name="MusicVolume" type="HSlider" parent="VolumeSliders/Sliders"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_p84qn")
+_busName = "Music"
+
+[node name="Label3" type="Label" parent="VolumeSliders/Sliders"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+text = "Sound Effect Volume"
+horizontal_alignment = 1
+
+[node name="SoundEffectVolume" type="HSlider" parent="VolumeSliders/Sliders"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_p84qn")
+_busName = "SFX"
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1054.0
+offset_top = 74.0
+offset_right = 1082.0
+offset_bottom = 102.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("6_nktbw")
+ignore_texture_size = true
+
+[node name="Keybindings" type="Node" parent="."]
+
+[node name="Grid" type="GridContainer" parent="Keybindings"]
+offset_left = 199.0
+offset_top = 249.0
+offset_right = 361.0
+offset_bottom = 409.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="Label" type="Label" parent="Keybindings/Grid"]
+layout_mode = 2
+text = "Jump: "
+
+[node name="Jump" type="Button" parent="Keybindings/Grid"]
+layout_mode = 2
+focus_mode = 0
+text = "Space"
+
+[node name="Label2" type="Label" parent="Keybindings/Grid"]
+layout_mode = 2
+text = "Quick Attack"
+
+[node name="Attack" type="Button" parent="Keybindings/Grid"]
+layout_mode = 2
+focus_mode = 0
+text = "S"
+
+[node name="Label3" type="Label" parent="Keybindings/Grid"]
+layout_mode = 2
+text = "Left"
+
+[node name="Left" type="Button" parent="Keybindings/Grid"]
+layout_mode = 2
+focus_mode = 0
+text = "A"
+
+[node name="Label4" type="Label" parent="Keybindings/Grid"]
+layout_mode = 2
+text = "Right"
+
+[node name="Right" type="Button" parent="Keybindings/Grid"]
+layout_mode = 2
+focus_mode = 0
+text = "D"
+
+[node name="Button" type="Button" parent="Keybindings"]
+offset_left = 203.0
+offset_top = 435.0
+offset_right = 367.0
+offset_bottom = 486.0
+text = "Reset Keybindings"
+
+[connection signal="pressed" from="CloseButton" to="." method="ReturnToMenu"]
+[connection signal="pressed" from="Keybindings/Button" to="." method="ResetKeys"]

@@ -1,0 +1,83 @@
+[gd_scene load_steps=14 format=3 uid="uid://ds4883lfcijxw"]
+
+[ext_resource type="Script" path="res://CharacterScenes/Players/Mages/Magic/Magic.cs" id="1_je2oj"]
+[ext_resource type="Texture2D" uid="uid://miwfepn0pasj" path="res://Art/PixelArtCharacters/PurpleMage/Fire/fire4.png" id="2_x5bif"]
+[ext_resource type="Texture2D" uid="uid://bmpb5hb2800vn" path="res://Art/PixelArtCharacters/PurpleMage/Fire/fire5.png" id="3_4uj34"]
+[ext_resource type="Texture2D" uid="uid://dia2m5selg8ii" path="res://Art/PixelArtCharacters/PurpleMage/Fire/fire6.png" id="4_lnul2"]
+[ext_resource type="Texture2D" uid="uid://b2mhq77s73toh" path="res://Art/PixelArtCharacters/PurpleMage/Fire/fire7.png" id="5_oglnt"]
+[ext_resource type="Texture2D" uid="uid://cwltv8wycph8c" path="res://Art/PixelArtCharacters/PurpleMage/Fire/fire8.png" id="6_5gxf3"]
+[ext_resource type="Texture2D" uid="uid://3ud1a2fhr7f3" path="res://Art/PixelArtCharacters/PurpleMage/Fire/fire9.png" id="7_tp7h1"]
+[ext_resource type="Texture2D" uid="uid://d2s54ornnux3q" path="res://Art/PixelArtCharacters/PurpleMage/Fire/fire1.png" id="8_wpa2g"]
+[ext_resource type="Texture2D" uid="uid://deyy36qq0lprp" path="res://Art/PixelArtCharacters/PurpleMage/Fire/fire2.png" id="9_o4548"]
+[ext_resource type="Texture2D" uid="uid://cliyhg78yn8bk" path="res://Art/PixelArtCharacters/PurpleMage/Fire/fire3.png" id="10_v0y0m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mppmc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x5bif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4uj34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lnul2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oglnt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5gxf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tp7h1")
+}],
+"loop": false,
+"name": &"Disappear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_wpa2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_o4548")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v0y0m")
+}],
+"loop": true,
+"name": &"Main",
+"speed": 6.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jg6mc"]
+a = Vector2(-11, 0)
+b = Vector2(14, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7n2m"]
+size = Vector2(25, 9)
+
+[node name="PurpleBall" type="RigidBody2D"]
+collision_mask = 14
+gravity_scale = 0.0
+script = ExtResource("1_je2oj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -9)
+sprite_frames = SubResource("SpriteFrames_mppmc")
+animation = &"Disappear"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_jg6mc")
+
+[node name="Attack" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+position = Vector2(1.5, -0.5)
+shape = SubResource("RectangleShape2D_y7n2m")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="AnimationFinished"]
+[connection signal="area_entered" from="Attack" to="." method="EnemyEntered"]
